@@ -24,7 +24,7 @@ public class gateController : MonoBehaviour
         {
             Debug.Log("geçti0");
             GetComponentInChildren<MeshRenderer>().material = green;
-            Instantiate(passEffect, transform.position, transform.rotation);
+            Instantiate(passEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
