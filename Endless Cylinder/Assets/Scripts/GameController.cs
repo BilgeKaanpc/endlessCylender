@@ -9,7 +9,15 @@ public class GameController : MonoBehaviour
 
     [SerializeField] List<GameObject> barriers;
 
+    GameObject soundController;
+    SoundController sounds;
 
+
+    private void Awake()
+    {
+        soundController = GameObject.Find("SoundController");
+        sounds = soundController.GetComponent<SoundController>();
+    }
     // Start is called before the first frame update
     void Start()
     {
