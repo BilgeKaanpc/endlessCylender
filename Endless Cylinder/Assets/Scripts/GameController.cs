@@ -6,7 +6,6 @@ public class GameController : MonoBehaviour
 {
     //Game Objects
     [SerializeField] GameObject player;
-
     [SerializeField] List<GameObject> barriers;
 
     GameObject soundController;
@@ -28,6 +27,15 @@ public class GameController : MonoBehaviour
     void Update()
     {
        player.transform.Translate(Vector3.forward * 50 * Time.deltaTime);
+
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        {
+            // Parmaðýn x koordinatlarýndaki deðiþimi hesapla
+            float touchDeltaPosition = Input.GetTouch(0).deltaPosition.x;
+
+            // Objeyi döndür
+            player.transform.Rotate(Vector3.forward, -touchDeltaPosition * 10 * Time.deltaTime);
+        }
     }
     private void FixedUpdate()
     {

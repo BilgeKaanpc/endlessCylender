@@ -23,7 +23,7 @@ public class LoopControler : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            cylinder.transform.position = new Vector3(0,0,cylinder.transform.position.z + 100);
+            cylinder.transform.position = new Vector3(0,0,cylinder.transform.position.z + 60);
             Debug.Log("Deðid");
         }
     }
